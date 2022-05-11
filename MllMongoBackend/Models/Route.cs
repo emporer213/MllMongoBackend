@@ -1,6 +1,8 @@
-﻿namespace MllMongoBackend.Models;
+﻿using MllMongoBackend.Interfaces;
 
-public class Route
+namespace MllMongoBackend.Models;
+
+public class Route : Entity
 {
     public string Origin { get; set; }
     public string Destination { get; set; }

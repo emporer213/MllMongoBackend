@@ -1,9 +1,10 @@
-﻿using MongoDB.Bson;
+﻿using MllMongoBackend.Interfaces;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace MllMongoBackend.Models;
 
-public class Appraisal
+public class Appraisal : Entity
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]

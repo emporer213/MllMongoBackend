@@ -3,30 +3,15 @@ using MllMongoBackend.Repositories.Interfaces;
 
 namespace MllMongoBackend.Repositories;
 
-public class CharacterRepository : IRepository<Character>
+public interface ICharacterRepository
 {
-    public async Task<ICollection<Character>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+}
 
-    public async Task<Character> Get(string id)
+public class CharacterRepository : Repository<Character>, ICharacterRepository
+{
+    public CharacterRepository(IDbContext dbContext) : 
+        base(dbContext)
     {
-        throw new NotImplementedException();
     }
-
-    public async Task<bool> Save(Character item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Update(Character item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Delete(string id)
-    {
-        throw new NotImplementedException();
-    }
+   
 }

@@ -3,30 +3,15 @@ using MllMongoBackend.Repositories.Interfaces;
 
 namespace MllMongoBackend.Repositories;
 
-public class SettingsRepository : IRepository<Settings>
+public interface ISettingsRepository
 {
-    public async Task<ICollection<Settings>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+}
 
-    public async Task<Settings> Get(string id)
+public class SettingsRepository : Repository<Settings>, ISettingsRepository
+{
+    public SettingsRepository(IDbContext dbContext) : 
+        base(dbContext)
     {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Save(Settings item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Update(Settings item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Delete(string id)
-    {
-        throw new NotImplementedException();
     }
 }
+

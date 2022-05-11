@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MllMongoBackend.Interfaces;
+using MongoDB.Driver;
 
 namespace MllMongoBackend;
 
@@ -13,9 +14,19 @@ public class DbClient : IDbContext
     }
     
     public IMongoDatabase Database { get; }
+
+    public IMongoCollection<T> GetCollection<T>()
+    {
+        return Database.GetCollection<T>(nameof(T));
+    }
+    
 }
 
 public interface IDbContext
 {
     IMongoDatabase Database { get; }
+
+    IMongoCollection<T> GetCollection<T>();
 }
+
+

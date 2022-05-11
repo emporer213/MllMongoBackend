@@ -1,6 +1,8 @@
-﻿namespace MllMongoBackend.Models;
+﻿using MllMongoBackend.Interfaces;
 
-public class Service
+namespace MllMongoBackend.Models;
+
+public class Service : Entity
 {
     public string Name { get; set; }
     public double HighsecPrice { get; set; }

@@ -1,8 +1,9 @@
 ﻿using ESI.NET.Enumerations;
+using MllMongoBackend.Interfaces;
 
 namespace MllMongoBackend.Models;
 
-public class Contract
+public class Contract : Entity
 {
     public string Id { get; set; }
     public DateTime CreationDate { get; set; }

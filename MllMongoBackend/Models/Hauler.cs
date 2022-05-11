@@ -1,6 +1,8 @@
-﻿namespace MllMongoBackend.Models;
+﻿using MllMongoBackend.Interfaces;
 
-public class Hauler
+namespace MllMongoBackend.Models;
+
+public class Hauler : Entity
 {
     public string CharacterName { get; set; }
     //TODO these should be secure

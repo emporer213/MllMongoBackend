@@ -1,6 +1,8 @@
-﻿namespace MllMongoBackend.Models;
+﻿using MllMongoBackend.Interfaces;
 
-public class SolarSystem
+namespace MllMongoBackend.Models;
+
+public class SolarSystem : Entity
 {
     public string Name { get; set; }
     

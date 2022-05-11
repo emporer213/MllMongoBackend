@@ -3,30 +3,16 @@ using MllMongoBackend.Repositories.Interfaces;
 
 namespace MllMongoBackend.Repositories;
 
-public class ServiceRepository : IRepository<Service>
+public interface IServiceRepository
 {
-    public async Task<ICollection<Service>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+}
 
-    public async Task<Service> Get(string id)
+public class ServiceRepository : Repository<Service>, IServiceRepository
+{
+    public ServiceRepository(IDbContext dbContext) : 
+        base(dbContext)
     {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Save(Service item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Update(Service item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<bool> Delete(string id)
-    {
-        throw new NotImplementedException();
     }
 }
+
+
